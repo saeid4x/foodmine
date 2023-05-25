@@ -1,0 +1,140 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 3rem;
+
+}
+
+/* '>' = all direct children */
+.container > *{
+
+    /* 
+    'min-width' means:
+        The min-width CSS property sets the minimum width of an element. 
+        It prevents the used value of the width property from becoming smaller 
+        than the value specified for min-width;
+     */
+    min-width: 25rem;
+    max-width: 40rem;
+
+}
+
+img{
+    border-radius: 3rem;
+
+    /* flex: <flex-grow>  <flex-shrink> 
+
+    flex-grow=0 means: 
+        flex-grow:0 simply means that the item won't be resized during 
+        item size calculation to accommodate flex container's full main axis size.
+   
+    flex-grow=1 means:
+        every child will set to an equal size inside the container. 
+        If you were to give one of the children a value of 2, that child
+        would take up twice as much space as the others
+    
+    */
+    flex:1 0;
+
+    /* 
+    object-fit =
+        The object-fit CSS property sets how the content of a replaced element,
+        such as an <img> or <video> , should be resized to fit its container
+    
+    object-fit: cover
+        The replaced content is sized to maintain its aspect ratio while filling the element's
+        entire content box: its concrete object size  is resolved as a cover constraint against 
+        the element's used width and height.
+    */
+    object-fit: cover;
+    height: 25rem;
+    margin: 1rem;
+
+
+}
+
+.details{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 ;
+    border-radius: 3rem;
+    padding: 2rem;
+    color: black;
+    margin-left: 1rem;
+
+}
+
+.details .header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.details .name{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.details .favorite{
+    color: #e72929;
+    font-size: 2.5rem;
+}
+
+.details .favorite.not{
+    color: grey;
+}
+
+.details  .origins{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem 0 ;
+}
+
+.details .origins > span{
+    padding: .5rem;
+    font-size: 1.2rem;
+    margin: .5rem .5rem .5rem 0;
+    border-radius: 2rem;
+    background-color: aliceblue;
+}
+.details .cookTime{
+    margin-top: 1rem;
+}
+.details .cookTime span{
+    padding:  .6rem 2rem .6rem 0;
+    border-radius: 10rem;
+    font-size: 1.3rem;
+    
+   
+}
+
+.details .price{
+    font-size: 1.8rem;
+    margin: 2rem 2rem 2rem 0;
+    color:green
+}
+
+.details .price::before{
+
+    /* Price: $9.00 */
+    content: "Price: ";
+    color: darkgrey;
+
+}
+
+.details button{
+    color: white;
+    background-color: #e72929;
+    border: none;
+    font-size: 1.2rem;
+    padding: 1rem;
+    border-radius: 10rem;
+    outline: none;
+}
+
+.details button:hover{
+    opacity: .9;
+    cursor: pointer;
+}
